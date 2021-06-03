@@ -8,9 +8,11 @@
     <style>
         .container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(20%, auto));
-            grid-template-rows: repeat(3, minmax(100px, auto));
+            grid-auto-rows: minmax(100px, auto);
+            grid-template-columns: repeat(3, minmax(100px, auto));
             border: solid black 1px;
+            row-gap: 50px;
+            column-gap: 50px;
         }
         
         .item {
@@ -19,7 +21,21 @@
             border: solid red 3px;
             text-align : center;
         }
+
+        .item:nth-child(1) {
+            grid-column-start: 1;
+            grid-column-end: 3;
+            grid-row-start: 1;
+            grid-row-end: 2;
+        }
+
+        .item:nth-child(2) {
+            background-color: purple;
+        }
         
+        .item:nth-child(8) {
+            background-color: gold;
+        }
 
     </style>
 </head>
@@ -28,7 +44,7 @@
         <div class="item">A</div>
         <div class="item">B</div>
         <div class="item">C</div>
-        <div class="item">D</div>
+        <div class="item">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora sed laboriosam, quasi dolorem, ipsam suscipit doloribus voluptatibus pariatur labore rerum ducimus adipisci error? Sapiente omnis reiciendis quos unde facere enim.</div>
         <div class="item">E</div>
         <div class="item">F</div>
         <div class="item">G</div>
